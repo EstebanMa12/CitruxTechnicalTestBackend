@@ -17,7 +17,7 @@ dotenv.config();
 const app: Express = express();
 app.use(cors())
 const port = process.env.PORT || 3000;
-console.log(process.env.API_VERSION_ROUTE)
+
 connect()
 
 //Middleware

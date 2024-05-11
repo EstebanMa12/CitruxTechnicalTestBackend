@@ -17,18 +17,19 @@ dotenv.config();
 const app: Express = express();
 app.use(cors())
 const port = process.env.PORT;
+console.log(process.env.API_VERSION_ROUTE)
 connect()
 
 //Middleware
 app.use(json());
 app.use(urlencoded({ extended: false }));
 
-app.get(`${process.env.API_VERSION_ROUTE}/`, (req: Request, res: Response) => {
-    res.send("Express + TypeScript Server");
+app.get(`${process.env.API_VERSION_ROUTE}`, (req: Request, res: Response) => {
+    res.send("<h1>Express + TypeScript Server</h1>");
 });
 
 app.listen(port, () => {
-    console.log(`[server]: Server is running at http://localhost:${port}`);
+    console.log(`[server]: Server is running at http://localhost:${port}/`);
 });
 
 app.use(`${process.env.API_VERSION_ROUTE}`, routes);

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import ArticleModel from "../models/article";
+import QueryModel from "../models/query"
 
 export const createArticle = async (url: string, content: string, summary: string) => {
     try {
@@ -26,6 +27,9 @@ export const getArticles = async () => {
 export const deleteArticle = async (id: string) => {
     try {
         const article = await ArticleModel.findByIdAndDelete(id);
+        if (article) {
+            await QueryModel.deleteMany({ articleId: article._id });
+        }
         return article;
     } catch (error) {
         console.error("[repository]: Error deleting article");

@@ -29,5 +29,11 @@ It's important to set the variables `PORT` and `API_VERSION_ROUTE` as i show you
 yarn dev
 ```
 
+## Deployment
+While this backend is deployed on Render, it's recommended to use it locally for optimal interaction with the frontend. However, if you wish to explore the deployed version, you can access it via the provided link.
+
+[Render Deployment](https://citruxtechnicaltestbackend.onrender.com)
+
 ## Contributors
 1. [Esteban Maya](www.linkedin.com/in/estebanmaya-fullstackdeveloper)
+
